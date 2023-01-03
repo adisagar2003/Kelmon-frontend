@@ -1,0 +1,31 @@
+.SignIn__layout{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+.SignIn{
+    display: flex;
+   justify-content: center;
+   border: 1px solid white;
+   height: 100%;
+   width: 100%;
+   align-items: center;
+
+}
+
+.Alert{
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    z-index: 99;
+    padding: 20px;
+    background-color: rgb(239, 71, 71);
+    color: white;
+    font-weight: 700;
+    
+}

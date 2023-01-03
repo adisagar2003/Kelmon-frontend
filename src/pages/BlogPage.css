@@ -1,0 +1,17 @@
+.BlogPage{
+display: flex;
+
+}
+
+.BlogPage__blogs{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+}
+@media only  screen and (max-width: 1000px) {
+    .BlogPage__blogs{
+        width: 100vw;
+        display:flex;
+    }
+}

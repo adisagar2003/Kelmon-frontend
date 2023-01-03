@@ -1,0 +1,176 @@
+.Blog__layout{
+    width: 600px;
+    height: 100px;
+    background-color: var(--primary);
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    border-radius: 15px;
+    padding-top: 20px;
+    color: var(--paragraph);
+    cursor: pointer;
+}
+.Blog__modal{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.515);
+    color: white;
+    z-index: 9;
+    
+}
+
+.Blog__modalCard{
+    width: 80%;
+    height: 90%;
+    background-color: var(--primary);
+    color: var(--paragraph);
+    padding: 34px;
+    position: relative;
+}
+
+.Blog__user{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.Blog__profile{
+height: 80px;
+width: 80px;
+overflow: hidden;
+
+position: relative;
+border-radius: 50%;
+}
+.Blog__profile img{
+width: 100%;
+object-fit: cover;
+border-radius: 50%;
+height: 100%;
+}
+.Blog__content{
+    display: flex;
+    margin-left: 30px;
+
+    margin-top: 25px;
+    width: 500px;
+    
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.Blog__userImage{
+overflow: hidden;
+width: 200px;
+height: 200px;
+border-radius: 50%;
+
+}
+.Blog__userImage img{
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+}
+.Blog__modalProfile{
+    display: flex;
+    
+    align-items: center;
+    gap: 40px;
+    font-weight: 700;
+    font-size: 42px;
+    color: var(--secondary);
+    margin-left: auto;;
+}
+.Blog__modalContent{
+    font-weight: 32px;
+    font-weight: 550;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    color: var(--text);
+}
+.Blog__closeButton{
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%)
+
+}
+.Blog__closeButton button{
+    padding: 30px;
+    width: 300px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background-color: var(--secondary);
+    border: none;
+    border-radius: 10px;
+    color: var(--text);
+    font-size: 24px;
+
+}
+
+
+.Blog__button{
+    width: 100px;
+    height: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+border-radius: 25px;
+background-color: blueviolet;
+border: none;
+color: white;
+font-weight: 700;
+margin-top: 20px;
+    right: 0px;
+    margin-right: 100px;
+    padding: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only  screen and (max-width: 1000px) {
+    .Blog__modalProfile{
+        display: flex;
+        flex-direction: column;
+
+    }
+    
+    .Blog__userImage{
+        width: 100px;
+        height: 100px;
+    }
+
+    .Blog__userName{
+        font-size: 32px;
+    }
+
+    .Blog__layout{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 150px;
+        width: 100%;
+        padding: 40px;
+        padding-left: 0px;
+        align-items: center;
+    }
+    .Blog__button{
+        position: relative;
+display: flex;
+justify-content: center;
+align-items: center;
+        left: 50px;
+
+
+    }
+}

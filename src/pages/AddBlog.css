@@ -1,0 +1,40 @@
+.AddBlog{
+    display: flex; 
+
+}
+.AddBlog__addnew{
+    padding: 20px;
+    color: var(--text);
+}
+.AddBlog__heading{
+    color: var(--secondary);
+    font-size: 42px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    
+}
+
+.AddBlog__Container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    gap: 50px;
+
+}
+.AddBlog__Container button:disabled{
+    padding: 10px;
+    border:none;
+    cursor: none;
+    transition: .2s;    
+    background-color: var(--primary);
+    border: 1px solid white;
+    border-radius: 25px;
+}
+.AddBlog__Container button{
+    padding: 10px;
+    border: none;
+    background-color: var(--secondary);
+    transition: .2s;    
+    color: white;
+    cursor: pointer;
+}
