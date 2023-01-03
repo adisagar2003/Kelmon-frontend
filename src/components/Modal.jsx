@@ -2,10 +2,7 @@ import { useState } from "react";
 import ReactDOM from "react-dom";
 import "./Blog.css";
 export default function Modal({ onClose, data, isModalOpened, sillyFunction }) {
-  const [openModal2, setOpenModal2] = useState(true);
-  function checkModalStatus() {
-    console.log(isModalOpened);
-  }
+
   if (!isModalOpened) {
     return null;
   } else {
@@ -14,7 +11,7 @@ export default function Modal({ onClose, data, isModalOpened, sillyFunction }) {
         <div className="Blog__modalCard">
           <div className="Blog__modalProfile">
             <div className="Blog__userImage">
-              <img src={data.profileImage} />
+              <img src={data.profileImage} alt="Profile Image" />
             </div>
             <div className="Blog__userName">{data.user_name}</div>
           </div>

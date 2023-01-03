@@ -25,6 +25,7 @@ const RegisterPage = () => {
       { headers: { "Content-Type": "application/x-www-form-urlencoded" } }
     );
     setLoading(false);
+    console.log(data);
   }
   return (
     <div className="RegisterPage__layout">

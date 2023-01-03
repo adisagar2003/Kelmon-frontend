@@ -18,7 +18,7 @@ function Blog(props) {
       )}
       <div className="Blog__user">
         <div className="Blog__profile">
-          <img src={props.profileImage} />
+          <img src={props.profileImage} alt="Avatar Blog" />
         </div>
 
         <div className="Blog__userName">{props.user_name}</div>
