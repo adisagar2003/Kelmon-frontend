@@ -1,3 +1,4 @@
+import { Alert } from "@chakra-ui/react";
 import axios from "axios";
 import React from "react";
 import { useState } from "react";
@@ -5,16 +6,15 @@ import Sidebar from "../components/Sidebar";
 import "./AddBlog.css";
 const AddBlog = () => {
   const [successToast, setSuccessToast] = useState(false);
+  const [error, setError] = useState(false);
   const [content, setContent] = useState("");
 
   async function submitBlog() {
-    const headers = document.cookie
-      .split(";")
-      .find((row) => row.startsWith(" access_token"))
-      .split("=")[1];
-
-    console.log(headers);
     try {
+      const headers = document.cookie
+        .split(";")
+        .find((row) => row.startsWith(" access_token"))
+        .split("=")[1];
       const data = await axios.post(
         `${process.env.REACT_APP_API_URL}api/v1/blog`,
 
@@ -31,6 +31,10 @@ const AddBlog = () => {
       setSuccessToast(true);
     } catch (err) {
       console.log(err.message);
+      setError(true);
+      setInterval(() => {
+        setError(false);
+      }, 3000);
     }
   }
   return (
@@ -49,7 +53,22 @@ const AddBlog = () => {
           <button onClick={submitBlog} disabled={content.length <= 10}>
             Active
           </button>
-          {successToast && <div>Hello there </div>}
+          {successToast && <Alert>Blog Successfully Added</Alert>}
+          {error && (
+            <div
+              style={{
+                position: "absolute",
+                top: 0,
+                zIndex: 99,
+                padding: 10,
+                backgroundColor: "red",
+                left: "50%",
+                transform: "translateX(-50%)",
+              }}
+            >
+              Error Not Logged In/ Invalid Token
+            </div>
+          )}
         </div>
       </div>
     </div>

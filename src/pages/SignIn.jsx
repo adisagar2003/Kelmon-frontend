@@ -3,6 +3,7 @@ import Sidebar from "../components/Sidebar";
 import "./SignIn.css";
 import axios from "axios";
 import UserContext from "../context/userContext";
+import { Button, Heading, Input, WrapItem } from "@chakra-ui/react";
 
 const SignIn = () => {
   const [userName, setUserName] = useState("");
@@ -24,7 +25,7 @@ const SignIn = () => {
         user_name: data.data.user.user_name,
         user_id: data.data.user.id,
         token: data.data.token,
-        profile_img: data.data.user.profile_image ,
+        profile_img: data.data.user.profile_image,
       });
       localStorage.setItem("kelmon_token", data.data.token);
       localStorage.setItem("kelmon_user", JSON.stringify(data.data.user));
@@ -42,27 +43,31 @@ const SignIn = () => {
   return (
     <div>
       {showAlert && <div className="Alert">User Not Found!</div>}
-      <div className="SignIn__layout">
+      <WrapItem>
         <Sidebar />
-        <div className="SignIn">
-          <div className="SignIn__form">
-            <div className="SignIn__heading"></div>
-            <div className="SignIn__input">
-              <input
-                placeholder="Username"
-                onChange={(e) => setUserName(e.target.value)}
-                type="text"
-              />
-              <input
-                placeholder="Password"
-                onChange={(e) => setPassword(e.target.value)}
-                type="password"
-              />
-            </div>
-            <button onClick={Login}>Login</button>
-          </div>
+
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: 30,
+            marginTop: 200,
+            marginLeft: 30,
+          }}
+        >
+          <Heading color="#7f5af0">Sign In</Heading>
+          <Input
+            placeholder="Username"
+            onChange={(e) => setUserName(e.target.value)}
+          />
+          <Input
+            placeContent="Password"
+            type="password"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <Button onClick={Login}>Login</Button>
         </div>
-      </div>
+      </WrapItem>
     </div>
   );
 };

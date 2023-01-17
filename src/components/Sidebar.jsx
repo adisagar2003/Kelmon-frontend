@@ -19,6 +19,7 @@ function Sidebar() {
     <div>
       <div
         className="Sidebar__hamburger"
+        style={{ zIndex: 99 }}
         onClick={() => setSidebarOpen(!sidebarOpen)}
       >
         <BsJustify />

@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import "./Blog.css";
 import Modal from "./Modal";
+import { Box, Button, Text } from "@chakra-ui/react";
+import { Avatar } from "@chakra-ui/react";
+import "./Blog.css";
 function Blog(props) {
   const [openModal, setIsOpen] = useState(false);
 
   return (
-    <div className="Blog__layout">
+    <Box ml={5} p={3} width={"90%"} style={{ position: "relative" }}>
       {openModal && (
         <Modal
           onClose={() => {
@@ -16,18 +18,19 @@ function Blog(props) {
           isModalOpened={openModal}
         />
       )}
-      <div className="Blog__user">
-        <div className="Blog__profile">
-          <img src={props.profileImage} alt="Avatar Blog" />
-        </div>
-
-        <div className="Blog__userName">{props.user_name}</div>
-      </div>
-      <div className="Blog__content">{props.content}</div>
-      <button className="Blog__button" onClick={() => setIsOpen(true)}>
-        Open
-      </button>
-    </div>
+      <Box direction="row" width={400} align={{ sm: "center", md: "left" }}>
+        <Avatar size="lg" name="Dan Abrahmov" src={props.profileImage} mr={3} />
+        <Text align="center" mt={4} maxWidth={400} noOfLines={[1]}>
+          {props.content}
+        </Text>
+        <Button
+          onClick={() => setIsOpen(true)}
+          style={{ position: "absolute", right: -90, bottom: 30 }}
+        >
+          Open
+        </Button>
+      </Box>
+    </Box>
   );
 }
 

@@ -9,6 +9,7 @@
     padding-top: 20px;
     color: var(--paragraph);
     cursor: pointer;
+    position: relative;
 }
 .Blog__modal{
     position: absolute;
@@ -136,6 +137,8 @@ margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    right: 0px;
 }
 
 @media only  screen and (max-width: 1000px) {
